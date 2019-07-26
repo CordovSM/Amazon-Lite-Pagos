@@ -3,7 +3,7 @@
     font-weight: bold;
 }
 
-.title-secondary{
+.title-secondary
     font-family: Roboto;
     font-weight: 400;
 }
@@ -30,4 +30,8 @@
 .alt{
     text-align: center;
    margin: .5rem !important;
+}
+
+.size{
+    height: 550px;
 }
