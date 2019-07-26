@@ -12,6 +12,11 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script src="js/pago.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $("#button").click(function(){
+    $("#pay").show();
+  });
+    </script>
 
 </head>
 <body>
@@ -53,22 +58,22 @@
                 <div class="col-lg-3">
                     <button class="btn" style="background: linear-gradient(180deg, #E4EFF5 -5.43%, #D6EAF3 139.12%);
                     border: 1px solid #BAE7FD; padding: .25rem;"><a href="https://www.paypal.com/webscr?cmd=_express-checkout&token=EC-9TD75022CA079724P&useraction=commit" target="_blank"><img src="img/paypal.png" alt=""></a></button>
-                    <button class="btn btn-color2" id="button" type="button"><i class="far fa-credit-card"></i>Pagar con tarjeta</button>
+                    <button class="btn btn-color2" id="button" type="button"><i class="far fa-credit-card mr-2"></i>Pagar con tarjeta</button>
                 </div>                
             </div>
-            <div class="row mt-4" id="pay">
-                <div class="col-lg-8">
+            <div class="row mt-4" >
+                <div class="col-lg-8 " id="pay">
                     <p style="font-size: 14px">Ingrese la información de su tarjeta:</p>
-                    <form>
+                    <form id="card-form" method="POST">
                         <div class="form-row">
                             <div class="form-group col-md-3">
-                            <label for="inputEmail4">Nombre del titular de la tarjeta</label>
-                            <input type="text" class="form-control" id="inputEmail4">
+                            <label>Nombre del titular de la tarjeta</label>
+                            <input type="text" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
-                            <label for="inputPassword4">Número de tarjeta</label>
-                            <input type="text" class="form-control"  name="stripeToken" value="tok_1EwyRXBvTVUdv5mz935w4NDh">
-                            <div id="card-element" class="p-4"></div>
+                            <label for="card-number">Número de tarjeta</label>
+                            <input type="text" class="form-control" name="" id="card-number">
+                            <div id="card-number" class="p-4 "></div>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Fecha de vencimiento</label>
@@ -107,15 +112,13 @@
                                     </div>                                    
                                 </div>
                             </div>  
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-3 mt-4">
                                 <button type="submit" class="btn btn-color1 btn-block">Pagar</button>
                             </div>                            
                         </div>
                     </form>
                 </div>
-                             
-                    
-                    <div id="errors" class="bg-red-800 text-white  rounded"></div>
+                <div id="errors" class="bg-red-800 text-white  rounded"></div>
                 </div>
             </div>
         </div>
